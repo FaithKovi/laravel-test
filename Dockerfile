@@ -31,7 +31,7 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 RUN php artisan key:generate
 
 # Expose port 9000 to communicate with Nginx or another web server
-EXPOSE 3009
+EXPOSE 3000
 
 # Start the PHP-FPM server
 CMD ["php-fpm"]
