@@ -29,7 +29,7 @@ RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 
 # Generate an application key and set it as an environment variable
-RUN php artisan key:generate && echo "APP_KEY=$(php artisan key:show)" >> .env
+RUN php artisan key:generate 
 
 
 # Expose port 9000 to communicate with Nginx or another web server
