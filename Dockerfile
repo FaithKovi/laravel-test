@@ -35,6 +35,5 @@ RUN php artisan key:generate && echo "APP_KEY=$(php artisan key:show)" >> .env
 # Expose port 9000 to communicate with Nginx or another web server
 EXPOSE 9000
 
-# Start the PHP-FPM server
-CMD ["php-fpm"]
-
+# Start the application
+CMD ["php","artisan","serve"]
