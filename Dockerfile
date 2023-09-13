@@ -27,8 +27,10 @@ COPY .env.example .env
 # Install application dependencies using Composer
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Generate an application key
-RUN php artisan key:generate
+
+# Generate an application key and set it as an environment variable
+RUN php artisan key:generate && echo "APP_KEY=$(php artisan key:show)" >> .env
+
 
 # Expose port 9000 to communicate with Nginx or another web server
 EXPOSE 9000
@@ -36,4 +38,3 @@ EXPOSE 9000
 # Start the PHP-FPM server
 CMD ["php-fpm"]
 
-# Optionally, you can add additional configuration and optimization steps here
