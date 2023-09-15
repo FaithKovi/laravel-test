@@ -11,4 +11,5 @@ php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 composer install
 
-chown 777 -R ./storage
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
