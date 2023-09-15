@@ -12,4 +12,4 @@ php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 composer install
 
 
-chown -R 777 storage
+sudo chown -R 777 storage
